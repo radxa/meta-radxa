@@ -61,11 +61,10 @@ bitbake-layers add-layer ../layers/meta-radxa
 cat << EOF | tee -a conf/local.conf
 WARN_QA:remove = "patch-fuzz"
 ERROR_QA:remove = "patch-status license-format"
-INHERIT:append = " rockchip-image"
 EOF
 
 bitbake-config-build disable-fragment machine/qemux86-64
-bitbake-config-build enable-fragment machine/rockchip-rk3576-evb
+bitbake-config-build enable-fragment machine/rock-5b
 
 bitbake core-image-minimal
 ```
