@@ -1,0 +1,24 @@
+From fcb0d157714a05ee80318aea7a7001734aedc710 Mon Sep 17 00:00:00 2001
+From: Stephen Chen <stephen@radxa.com>
+Date: Thu, 21 Nov 2024 16:54:33 +0800
+Subject: [PATCH] MALI: bifrost: CSF: do not include mali_csffw.bin into driver
+ by default
+
+Signed-off-by: Stephen Chen <stephen@radxa.com>
+
+diff --git a/drivers/gpu/arm/bifrost/Kconfig b/drivers/gpu/arm/bifrost/Kconfig
+index b8ceff10e250..eb8657ccf323 100644
+--- a/drivers/gpu/arm/bifrost/Kconfig
++++ b/drivers/gpu/arm/bifrost/Kconfig
+@@ -392,7 +392,7 @@ config MALI_TRACE_POWER_GPU_WORK_PERIOD
+ config MALI_CSF_INCLUDE_FW
+ 	depends on MALI_BIFROST && MALI_CSF_SUPPORT
+ 	bool "Whether to include CSF firmware into driver"
+-	default y
++	default n
+ 
+ # source "$(MALI_KCONFIG_EXT_PREFIX)drivers/gpu/arm/bifrost/tests/Kconfig"
+ 
+-- 
+2.25.1
+
