@@ -133,7 +133,7 @@
         "configurations": [
             {
                 "bb-layers": [
-                    "meta-rity/meta",
+                    "openembedded-core/meta",
                     "meta-yocto/meta-poky",
                     "meta-yocto/meta-yocto-bsp",
                     "meta-arm/meta-arm",
