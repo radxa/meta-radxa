@@ -54,7 +54,7 @@
                     "meta-yocto/meta-poky",
                     "meta-openembedded/meta-oe",
                     "meta-rockchip",
-                    "meta-radxa"
+                    "meta-radxa/meta-rockchip"
                 ],
                 "setup-dir-name": "$distro-rockchip",
                 "oe-fragments-one-of": {

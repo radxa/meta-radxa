@@ -1,70 +1,38 @@
-This README file contains information on the contents of the meta-radxa layer.
+# meta-radxa
 
-Please see the corresponding sections below for details.
+Radxa Yocto BSP layer
 
-Dependencies
-============
+## Usage
 
-  URI: <first dependency>
-  branch: <branch name>
-
-  URI: <second dependency>
-  branch: <branch name>
-
-  .
-  .
-  .
-
-Patches
-=======
-
-Please submit any patches against the meta-radxa layer to the xxxx mailing list (xxxx@zzzz.org)
-and cc: the maintainer:
-
-Maintainer: XXX YYYYYY <xxx.yyyyyy@zzzzz.com>
-
-Table of Contents
-=================
-
-  I. Adding the meta-radxa layer to your build
- II. Misc
-
-
-I. Adding the meta-radxa layer to your build
-=================================================
-
-Run 'bitbake-layers add-layer meta-radxa'
-
-II. Misc
-========
+The listed build dependencies are for reference only. The upstream may make changes
+without notice. Please check the related documentation for up-to-date info.
 
 ```
+# Install build dependencies
 sudo apt-get update
+# Upstream Yocto dependencies
+# https://docs.yoctoproject.org/brief-yoctoprojectqs/index.html#build-host-packages
 sudo apt-get install -y build-essential chrpath cpio debianutils diffstat file gawk gcc git iputils-ping libacl1 libcrypt-dev locales python3 python3-git python3-jinja2 python3-pexpect python3-pip python3-subunit socat texinfo unzip wget xz-utils zstd
 
+# Install bitbake-setup
 sudo apt-get install -y pipx
 pipx ensurepath
 export PATH="$HOME/.local/bin:$PATH"
 pipx install bitbake-setup
 
-bitbake-setup init --non-interactive poky-wrynose poky distro/poky machine/qemux86-64
+# Interactively create a new workspace
+bitbake-setup \
+  --setting default registry 'git://github.com/radxa/meta-radxa.git;protocol=https;branch=main;rev=main' \
+  init
 
-source bitbake-builds/poky-wrynose/build/init-build-env
+# Example for creating workspace non-interactively
+# The required parameters will be printed after answering all questions in the
+# interactive setup
+# bitbake-setup --setting default registry 'git://github.com/radxa/meta-radxa.git;protocol=https;branch=main;rev=main' init --non-interactive poky-rockchip poky distro/poky machine/rock-5b
 
-git clone -b wrynose https://git.openembedded.org/meta-openembedded ../layers/meta-openembedded
-bitbake-layers add-layer ../layers/meta-openembedded/meta-oe
-git clone -b wrynose https://github.com/JeffyCN/meta-rockchip ../layers/meta-rockchip
-bitbake-layers add-layer ../layers/meta-rockchip
-git clone -b main https://github.com/radxa/meta-radxa ../layers/meta-radxa
-bitbake-layers add-layer ../layers/meta-radxa
+# Load build environment
+source bitbake-builds/poky-*/build/init-build-env
 
-cat << EOF | tee -a conf/local.conf
-WARN_QA:remove = "patch-fuzz"
-ERROR_QA:remove = "patch-status license-format"
-EOF
-
-bitbake-config-build disable-fragment machine/qemux86-64
-bitbake-config-build enable-fragment machine/rock-5b
-
+# Stare building image
 bitbake core-image-minimal
 ```
