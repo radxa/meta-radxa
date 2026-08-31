@@ -1,5 +1,5 @@
 {
-    "description": "Radxa Yocto layer for Rockchip devices",
+    "description": "Radxa Yocto for Rockchip devices, release 6.0 'wrynose'",
     "expires": "2030-05-31",
     "sources": {
         "bitbake": {

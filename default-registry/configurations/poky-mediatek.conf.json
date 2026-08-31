@@ -1,38 +1,17 @@
 {
-    "description": "Radxa Yocto layer for MediaTek devices",
+    "description": "Radxa Yocto for MediaTek devices, release 5.0 'scarthgap'",
     "expires": "2028-04-30",
     "sources": {
         "bitbake": {
             "git-remote": {
                 "uri": "https://git.openembedded.org/bitbake",
-                "branch": "2.8",
-                "rev": "2.8"
-            }
-        },
-        "openembedded-core": {
-            "git-remote": {
-                "uri": "https://git.openembedded.org/openembedded-core",
-                "branch": "scarthgap",
-                "rev": "scarthgap"
-            }
-        },
-        "meta-yocto": {
-            "git-remote": {
-                "uri": "https://git.yoctoproject.org/meta-yocto",
-                "branch": "scarthgap",
-                "rev": "scarthgap"
+                "branch": "2.18",
+                "rev": "2.18"
             }
         },
         "meta-openembedded": {
             "git-remote": {
                 "uri": "https://git.openembedded.org/meta-openembedded",
-                "branch": "scarthgap",
-                "rev": "scarthgap"
-            }
-        },
-        "poky": {
-            "git-remote": {
-                "uri": "https://git.yoctoproject.org/poky",
                 "branch": "scarthgap",
                 "rev": "scarthgap"
             }
@@ -140,9 +119,31 @@
         "configurations": [
             {
                 "bb-layers": [
-                    "openembedded-core/meta",
-                    "meta-yocto/meta-yocto-bsp",
-                    "meta-yocto/meta-poky"
+                    "meta-rity/meta",
+                    "meta-rity/meta-poky",
+                    "meta-rity/meta-yocto-bsp",
+                    "meta-arm/meta-arm",
+                    "meta-arm/meta-arm-toolchain",
+                    "meta-clang",
+                    "meta-mediatek-bsp",
+                    "meta-mediatek-tsn",
+                    "meta-mediatek-bluedroid",
+                    "meta-mediatek-demo",
+                    "meta-asix",
+                    "meta-nn",
+                    "meta-security",
+                    "meta-openembedded/meta-multimedia",
+                    "meta-openembedded/meta-networking",
+                    "meta-openembedded/meta-oe",
+                    "meta-openembedded/meta-python",
+                    "meta-openembedded/meta-perl",
+                    "meta-rity/meta",
+                    "meta-rity/meta-rity-bringup",
+                    "meta-rity/meta-rity-demo",
+                    "meta-tensorflow",
+                    "meta-lts-mixins",
+                    "meta-browser/meta-chromium",
+                    "meta-radxa/meta-mediatek"
                 ],
                 "setup-dir-name": "$distro-mediatek",
                 "oe-fragments-one-of": {
@@ -150,16 +151,16 @@
                         "description": "Target machines",
                         "options": [
                             {
-                                "name": "machine/radxa-nio12b-norboot-ufs",
-                                "description": "Radxa NIO 12B (NOR bootloader, UFS rootfs)"
+                                "name": "machine/radxa-nio12b",
+                                "description": "Radxa NIO 12B (UFS boot)"
                             },
                             {
                                 "name": "machine/radxa-nio12b-sd",
                                 "description": "Radxa NIO 12B (SD boot)"
                             },
                             {
-                                "name": "machine/radxa-nio12b",
-                                "description": "Radxa NIO 12B (UFS boot)"
+                                "name": "machine/radxa-nio12b-norboot-ufs",
+                                "description": "Radxa NIO 12B (NOR bootloader, UFS rootfs)"
                             }
                         ]
                     },
