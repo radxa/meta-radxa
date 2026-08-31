@@ -144,11 +144,11 @@
                 "configurations": [
                     {
                         "name": "poky",
-                        "description": "Poky - The Yocto Project testing distribution"
+                        "description": "Radxa Yocto for Rockchip devices"
                     },
                     {
                         "name": "poky-with-sstate",
-                        "description": "Poky - The Yocto Project testing distribution with internet sstate acceleration. Use with caution as it requires a completely robust local network with sufficient bandwidth.",
+                        "description": "Radxa Yocto for Rockchip devices with internet sstate acceleration. Use with caution as it requires a completely robust local network with sufficient bandwidth.",
                         "oe-fragments": [
                             "core/yocto/sstate-mirror-cdn"
                         ]
