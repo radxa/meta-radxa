@@ -2,6 +2,13 @@
     "description": "Radxa Yocto layer for Rockchip devices",
     "expires": "2030-05-31",
     "sources": {
+        "bitbake": {
+            "git-remote": {
+                "uri": "https://git.openembedded.org/bitbake",
+                "branch": "2.18",
+                "rev": "2.18"
+            }
+        },
         "openembedded-core": {
             "git-remote": {
                 "uri": "https://git.openembedded.org/openembedded-core",
