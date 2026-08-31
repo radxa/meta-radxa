@@ -1,0 +1,154 @@
+{
+    "description": "Radxa Yocto layer for Rockchip devices",
+    "expires": "2030-05-31",
+    "sources": {
+        "openembedded-core": {
+            "git-remote": {
+                "uri": "https://git.openembedded.org/openembedded-core",
+                "branch": "wrynose",
+                "rev": "wrynose"
+            }
+        },
+        "meta-yocto": {
+            "git-remote": {
+                "uri": "https://git.yoctoproject.org/meta-yocto",
+                "branch": "wrynose",
+                "rev": "wrynose"
+            }
+        },
+        "meta-openembedded": {
+            "git-remote": {
+                "uri": "https://git.openembedded.org/meta-openembedded",
+                "branch": "wrynose",
+                "rev": "wrynose"
+            }
+        },
+        "meta-rockchip": {
+            "git-remote": {
+                "uri": "https://github.com/JeffyCN/meta-rockchip",
+                "branch": "wrynose",
+                "rev": "wrynose"
+            }
+        },
+        "meta-radxa": {
+            "git-remote": {
+                "uri": "https://github.com/radxa/meta-radxa",
+                "branch": "main",
+                "rev": "main"
+            }
+        }
+    },
+    "bitbake-setup": {
+        "configurations": [
+            {
+                "bb-layers": [
+                    "openembedded-core/meta",
+                    "meta-yocto/meta-yocto-bsp",
+                    "meta-yocto/meta-poky",
+                    "meta-openembedded/meta-oe",
+                    "meta-rockchip",
+                    "meta-radxa"
+                ],
+                "setup-dir-name": "$distro-rockchip",
+                "oe-fragments-one-of": {
+                    "machine": {
+                        "description": "Target machines",
+                        "options": [
+                            {
+                                "name": "machine/radxa-cm5-io",
+                                "description": "Radxa CM5 IO Board"
+                            },
+                            {
+                                "name": "machine/radxa-cm5-rpi-cm4-io",
+                                "description": "Radxa CM5 on Raspberry Pi CM4 IO Board"
+                            },
+                            {
+                                "name": "machine/radxa-e20c",
+                                "description": "Radxa E20C"
+                            },
+                            {
+                                "name": "machine/radxa-e52c",
+                                "description": "Radxa E52C"
+                            },
+                            {
+                                "name": "machine/radxa-e54c",
+                                "description": "Radxa E54C"
+                            },
+                            {
+                                "name": "machine/radxa-nx5-io",
+                                "description": "Radxa NX5 IO Board"
+                            },
+                            {
+                                "name": "machine/rock-2a",
+                                "description": "Radxa ROCK 2A"
+                            },
+                            {
+                                "name": "machine/rock-2f",
+                                "description": "Radxa ROCK 2F"
+                            },
+                            {
+                                "name": "machine/rock-4d",
+                                "description": "Radxa ROCK 4D"
+                            },
+                            {
+                                "name": "machine/rock-5-itx",
+                                "description": "Radxa ROCK 5 ITX"
+                            },
+                            {
+                                "name": "machine/rock-5a",
+                                "description": "Radxa ROCK 5A"
+                            },
+                            {
+                                "name": "machine/rock-5b-plus",
+                                "description": "Radxa ROCK 5B+"
+                            },
+                            {
+                                "name": "machine/rock-5b",
+                                "description": "Radxa ROCK 5B"
+                            },
+                            {
+                                "name": "machine/rock-5c",
+                                "description": "Radxa ROCK 5C"
+                            },
+                            {
+                                "name": "machine/rock-5t",
+                                "description": "Radxa ROCK 5T"
+                            }
+                        ]
+                    },
+                    "distro": {
+                        "description": "Target distributions",
+                        "options": [
+                            {
+                                "name": "distro/poky",
+                                "description": "Yocto Project Reference Distro"
+                            },
+                            {
+                                "name": "distro/poky-altcfg",
+                                "description": "Poky alternative with systemd as init manager"
+                            },
+                            {
+                                "name": "distro/poky-tiny",
+                                "description": "Poky alternative optimized for size"
+                            }
+                        ]
+                    }
+                },
+                "configurations": [
+                    {
+                        "name": "poky",
+                        "description": "Poky - The Yocto Project testing distribution"
+                    },
+                    {
+                        "name": "poky-with-sstate",
+                        "description": "Poky - The Yocto Project testing distribution with internet sstate acceleration. Use with caution as it requires a completely robust local network with sufficient bandwidth.",
+                        "oe-fragments": [
+                            "core/yocto/sstate-mirror-cdn"
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "version": "1.0"
+}
