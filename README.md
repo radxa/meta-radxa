@@ -35,7 +35,7 @@ bitbake-setup \
 # bitbake-setup --setting default registry 'git://github.com/radxa/meta-radxa.git;protocol=https;branch=main;rev=main' init --non-interactive poky-rockchip poky distro/poky machine/rock-5b
 
 # Load build environment
-source bitbake-builds/poky-*/build/init-build-env
+source bitbake-builds/*/build/init-build-env
 
 # Stare building image
 bitbake core-image-minimal

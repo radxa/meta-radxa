@@ -16,6 +16,13 @@
                 "rev": "scarthgap"
             }
         },
+        "meta-yocto": {
+            "git-remote": {
+                "uri": "https://git.yoctoproject.org/meta-yocto",
+                "branch": "scarthgap",
+                "rev": "scarthgap"
+            }
+        },
         "meta-openembedded": {
             "git-remote": {
                 "uri": "https://git.openembedded.org/meta-openembedded",
@@ -127,8 +134,8 @@
             {
                 "bb-layers": [
                     "meta-rity/meta",
-                    "meta-rity/meta-poky",
-                    "meta-rity/meta-yocto-bsp",
+                    "meta-yocto/meta-poky",
+                    "meta-yocto/meta-yocto-bsp",
                     "meta-arm/meta-arm",
                     "meta-arm/meta-arm-toolchain",
                     "meta-clang",
@@ -175,31 +182,32 @@
                         "description": "Target distributions",
                         "options": [
                             {
-                                "name": "distro/poky",
-                                "description": "Yocto Project Reference Distro"
+                                "name": "distro/rity-demo",
+                                "description": "Rity Demo Layer"
                             },
                             {
-                                "name": "distro/poky-altcfg",
-                                "description": "Poky alternative with systemd as init manager"
+                                "name": "distro/rity-demo-panfrost",
+                                "description": "Rity Demo Layer with Mesa Panfrost"
                             },
                             {
-                                "name": "distro/poky-tiny",
-                                "description": "Poky alternative optimized for size"
+                                "name": "distro/rity-skeleton",
+                                "description": "RITY skeleton"
+                            },
+                            {
+                                "name": "distro/rity-bringup",
+                                "description": "Rity bringup"
+                            },
+                            {
+                                "name": "distro/rity-skeleton",
+                                "description": "RITY skeleton"
                             }
                         ]
                     }
                 },
                 "configurations": [
                     {
-                        "name": "poky",
+                        "name": "rity",
                         "description": "Radxa Yocto for MediaTek devices"
-                    },
-                    {
-                        "name": "poky-with-sstate",
-                        "description": "Radxa Yocto for MediaTek devices with internet sstate acceleration. Use with caution as it requires a completely robust local network with sufficient bandwidth.",
-                        "oe-fragments": [
-                            "core/yocto/sstate-mirror-cdn"
-                        ]
                     }
                 ]
             }
