@@ -9,6 +9,13 @@
                 "rev": "2.18"
             }
         },
+        "openembedded-core": {
+            "git-remote": {
+                "uri": "https://git.openembedded.org/openembedded-core",
+                "branch": "scarthgap",
+                "rev": "scarthgap"
+            }
+        },
         "meta-openembedded": {
             "git-remote": {
                 "uri": "https://git.openembedded.org/meta-openembedded",
