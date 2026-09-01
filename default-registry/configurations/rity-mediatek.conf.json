@@ -157,6 +157,7 @@
                     "meta-tensorflow",
                     "meta-lts-mixins",
                     "meta-browser/meta-chromium",
+                    "meta-radxa/meta-scarthgap",
                     "meta-radxa/meta-mediatek"
                 ],
                 "setup-dir-name": "$distro-mediatek",
