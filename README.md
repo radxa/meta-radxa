@@ -31,3 +31,13 @@ bitbake core-image-minimal
 
 Platform-specific information, including the build dependencies, can be found
 under the platform layer.
+
+## Cheatsheet
+
+### Switching to different machine/distro
+
+```
+# You can find currently enabled fragment under build/conf/toolcfg.conf
+bitbake-config-build disable-fragment machine/<current_fragment>
+bitbake-config-build enable-fragment machine/<new_fragment>
+```
