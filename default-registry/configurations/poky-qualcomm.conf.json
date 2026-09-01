@@ -105,11 +105,11 @@
                 "configurations": [
                     {
                         "name": "poky",
-                        "description": "Radxa Yocto for Rockchip devices"
+                        "description": "Radxa Yocto for Qualcomm devices"
                     },
                     {
                         "name": "poky-with-sstate",
-                        "description": "Radxa Yocto for Rockchip devices with internet sstate acceleration. Use with caution as it requires a completely robust local network with sufficient bandwidth.",
+                        "description": "Radxa Yocto for Qualcomm devices with internet sstate acceleration. Use with caution as it requires a completely robust local network with sufficient bandwidth.",
                         "oe-fragments": [
                             "core/yocto/sstate-mirror-cdn"
                         ]
