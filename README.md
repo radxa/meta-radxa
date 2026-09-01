@@ -25,7 +25,7 @@ bitbake-setup \
 # Load build environment
 source bitbake-builds/*/build/init-build-env
 
-# Stare building image
+# Start building image
 bitbake core-image-minimal
 ```
 
