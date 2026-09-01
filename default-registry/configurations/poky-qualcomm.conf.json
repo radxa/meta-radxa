@@ -30,6 +30,20 @@
                 "rev": "wrynose"
             }
         },
+        "meta-arm": {
+            "git-remote": {
+                "uri": "https://git.yoctoproject.org/meta-arm",
+                "branch": "wrynose",
+                "rev": "wrynose"
+            }
+        },
+        "meta-lts-mixins": {
+            "git-remote": {
+                "uri": "https://git.yoctoproject.org/meta-lts-mixins",
+                "branch": "wrynose/linux-firmware",
+                "rev": "wrynose/linux-firmware"
+            }
+        },
         "meta-qcom": {
             "git-remote": {
                 "uri": "https://github.com/qualcomm-linux/meta-qcom",
@@ -52,7 +66,10 @@
                     "openembedded-core/meta",
                     "meta-yocto/meta-yocto-bsp",
                     "meta-yocto/meta-poky",
+                    "meta-arm/meta-arm",
+                    "meta-arm/meta-arm-toolchain",
                     "meta-openembedded/meta-oe",
+                    "meta-lts-mixins",
                     "meta-qcom",
                     "meta-radxa/meta-qualcomm"
                 ],
