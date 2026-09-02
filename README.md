@@ -56,3 +56,11 @@ bitbake-config-build enable-fragment machine/<new_fragment>
 git clone -b <branch> <git repo URL> ../layers/<layer name>
 bitbake-layers add-layer ../layers/<layer name>
 ```
+
+### Build SoC vendor-provided machines
+
+This is usually used at vendor bring-up, to test build process.
+
+When you run `bitbake-setup`, use `--non-interactive` and pass `--skip-selection machine` instead of `machine/<your actual device>` to it.
+
+Then after you run `init-build-env`, you can use `bitbake-config-build enable-fragment` to add the vendor-provided machines.
