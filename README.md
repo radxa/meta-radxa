@@ -4,7 +4,7 @@ Radxa Yocto BSP layer
 
 ## Usage
 
-```
+```bash
 # Install bitbake-setup
 sudo apt-get update
 sudo apt-get install -y pipx
@@ -34,10 +34,19 @@ under the platform layer.
 
 ## Cheatsheet
 
+All commands should be run after calling `init-build-env`.
+
 ### Switching to different machine/distro
 
-```
+```bash
 # You can find currently enabled fragment under build/conf/toolcfg.conf
 bitbake-config-build disable-fragment machine/<current_fragment>
 bitbake-config-build enable-fragment machine/<new_fragment>
+```
+
+### Adding custom layer
+
+```bash
+git clone -b <branch> <git repo URL> ../layers/<layer name>
+bitbake-layers add-layer ../layers/<layer name>
 ```

@@ -7,7 +7,7 @@ Radxa Yocto BSP layer for MediaTek devices
 The listed build dependencies are for reference only. The upstream may make changes
 without notice. Please check the related documentation for up-to-date info.
 
-```
+```bash
 # Install build dependencies
 sudo apt-get update
 # MediaTek Yocto dependencies
