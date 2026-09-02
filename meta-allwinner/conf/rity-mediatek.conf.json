@@ -1,0 +1,92 @@
+{
+    "description": "Radxa Yocto for Allwinner devices, release 5.0 'scarthgap'",
+    "expires": "2028-04-30",
+    "sources": {
+        "bitbake": {
+            "git-remote": {
+                "uri": "https://git.openembedded.org/bitbake",
+                "branch": "2.18",
+                "rev": "2.18"
+            }
+        },
+        "poky": {
+            "git-remote": {
+                "uri": "https://gitlab.com/tina5.0_aiot/product/tina/yocto/poky",
+                "branch": "product-aiot-stable",
+                "rev": "product-aiot-stable"
+            }
+        },
+        "meta-openembedded": {
+            "git-remote": {
+                "uri": "https://gitlab.com/tina5.0_aiot/product/tina/yocto/meta-openembedded",
+                "branch": "product-aiot-stable",
+                "rev": "product-aiot-stable"
+            }
+        },
+        "meta-tina": {
+            "git-remote": {
+                "uri": "https://gitlab.com/tina5.0_aiot/product/tina/yocto/meta-tina",
+                "branch": "product-aiot-stable",
+                "rev": "product-aiot-stable"
+            }
+        },
+        "meta-radxa": {
+            "git-remote": {
+                "uri": "https://github.com/radxa/meta-radxa",
+                "branch": "main",
+                "rev": "main"
+            }
+        }
+    },
+    "bitbake-setup": {
+        "configurations": [
+            {
+                "bb-layers": [
+                    "poky/meta",
+                    "poky/meta-poky",
+                    "poky/meta-yocto-bsp",
+                    "meta-openembedded/meta-oe",
+                    "meta-tina",
+                    "meta-radxa/meta-scarthgap",
+                    "meta-radxa/meta-allwinner"
+                ],
+                "setup-dir-name": "$distro-allwinner",
+                "oe-fragments-one-of": {
+                    "machine": {
+                        "description": "Target machines",
+                        "options": [
+                            {
+                                "name": "machine/radxa-cubie-a5e",
+                                "description": "Radxa Cubie A5E"
+                            }
+                        ]
+                    },
+                    "distro": {
+                        "description": "Target distributions",
+                        "options": [
+                            {
+                                "name": "distro/tina-industry",
+                                "description": "AW Tina-Yocto-Distro"
+                            },
+                            {
+                                "name": "distro/tina-minimal",
+                                "description": "AW Tina-Yocto-Distro"
+                            },
+                            {
+                                "name": "distro/tina-robot",
+                                "description": "AW Tina-Yocto-Distro"
+                            }
+                        ]
+                    }
+                },
+                "configurations": [
+                    {
+                        "name": "tina",
+                        "description": "Radxa Yocto for Allwinner devices"
+                    }
+                ]
+            }
+        ]
+    },
+    "version": "1.0"
+}
