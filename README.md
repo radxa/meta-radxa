@@ -32,6 +32,12 @@ bitbake core-image-minimal
 Platform-specific information, including the build dependencies, can be found
 under the platform layer.
 
+## Use your own fork
+
+1. Change the registry URL to your own repo when calling `bitbake-setup`
+2. Change `meta-<vendor>\conf\<config template>.conf.json`'s source to your own repo
+3. Optionally, add your own layer, and your own machine in the same config template
+
 ## Cheatsheet
 
 All commands should be run after calling `init-build-env`.
