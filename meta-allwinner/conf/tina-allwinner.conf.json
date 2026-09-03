@@ -9,18 +9,25 @@
                 "rev": "2.18"
             }
         },
-        "poky": {
+        "openembedded-core": {
             "git-remote": {
-                "uri": "https://gitlab.com/tina5.0_aiot/product/tina/yocto/poky",
-                "branch": "product-aiot-stable",
-                "rev": "product-aiot-stable"
+                "uri": "https://git.openembedded.org/openembedded-core",
+                "branch": "scarthgap",
+                "rev": "scarthgap"
+            }
+        },
+        "meta-yocto": {
+            "git-remote": {
+                "uri": "https://git.yoctoproject.org/meta-yocto",
+                "branch": "scarthgap",
+                "rev": "scarthgap"
             }
         },
         "meta-openembedded": {
             "git-remote": {
-                "uri": "https://gitlab.com/tina5.0_aiot/product/tina/yocto/meta-openembedded",
-                "branch": "product-aiot-stable",
-                "rev": "product-aiot-stable"
+                "uri": "https://git.openembedded.org/meta-openembedded",
+                "branch": "scarthgap",
+                "rev": "scarthgap"
             }
         },
         "meta-tina": {
@@ -42,9 +49,9 @@
         "configurations": [
             {
                 "bb-layers": [
-                    "poky/meta",
-                    "poky/meta-poky",
-                    "poky/meta-yocto-bsp",
+                    "openembedded-core/meta",
+                    "meta-yocto/meta-poky",
+                    "meta-yocto/meta-yocto-bsp",
                     "meta-openembedded/meta-oe",
                     "meta-tina",
                     "meta-radxa/meta-scarthgap",
